@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Variables de color personalizadas === */
+:root {
+  --rojo: #b22222;
+  --blanco: #ffffff;
+  --gris: #f5f5f5;
+  --gris-texto: #333333;
+  --borde: #dddddd;
+  --sombra: rgba(0, 0, 0, 0.05);
+}
