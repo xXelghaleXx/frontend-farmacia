@@ -27,8 +27,17 @@ export default function Login() {
     <Container className="mt-5">
       <Row className="justify-content-md-center">
         <Col xs={12} md={6}>
-          <h2 className="text-center mb-4">Iniciar Sesión</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {/* Título verde hoja */}
+          <h2 className="text-center mb-4" style={{ color: '#4CAF50' }}>
+            Iniciar Sesión
+          </h2>
+
+          {error && (
+            <Alert variant="success" className="text-success">
+              {error}
+            </Alert>
+          )}
+
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formUsername">
               <Form.Label>Usuario</Form.Label>
@@ -54,7 +63,12 @@ export default function Login() {
               />
             </Form.Group>
 
-            <Button variant="danger" type="submit" className="w-100">
+            {/* Botón verde hoja */}
+            <Button
+              type="submit"
+              className="w-100"
+              style={{ backgroundColor: '#4CAF50', borderColor: '#4CAF50' }}
+            >
               Entrar
             </Button>
           </Form>

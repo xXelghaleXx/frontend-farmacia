@@ -67,9 +67,15 @@ export default function Productos() {
 
   return (
     <Container className="mt-5">
-      <h2 className="text-center text-danger mb-4">Lista de Productos</h2>
+      <h2 className="text-center mb-4" style={{ color: '#4CAF50' }}>
+        Lista de Productos
+      </h2>
 
-      {error && <Alert variant="danger">{error}</Alert>}
+      {error && (
+        <Alert variant="success" className="text-success">
+          {error}
+        </Alert>
+      )}
 
       <Row xs={1} md={2} lg={2} className="g-4 mb-4">
         {productos.map((p) => (
@@ -83,7 +89,12 @@ export default function Productos() {
                 </Card.Text>
                 {usuario.rol !== 'usuario' && (
                   <>
-                    <Button variant="warning" size="sm" onClick={() => editar(p)} className="me-2">
+                    <Button
+                      size="sm"
+                      onClick={() => editar(p)}
+                      style={{ backgroundColor: '#66BB6A', borderColor: '#66BB6A' }}
+                      className="me-2 text-white"
+                    >
                       ✏️ Editar
                     </Button>
                     {usuario.rol === 'admin' && (
@@ -100,8 +111,13 @@ export default function Productos() {
       </Row>
 
       {usuario.rol !== 'usuario' && (
-        <Form onSubmit={editando ? actualizarProducto : crearProducto} className="bg-light p-4 rounded shadow">
-          <h4 className="text-center text-danger">{editando ? 'Editar Producto' : 'Nuevo Producto'}</h4>
+        <Form
+          onSubmit={editando ? actualizarProducto : crearProducto}
+          className="bg-light p-4 rounded shadow"
+        >
+          <h4 className="text-center mb-4" style={{ color: '#4CAF50' }}>
+            {editando ? 'Editar Producto' : 'Nuevo Producto'}
+          </h4>
 
           <Row>
             <Col md={4} className="mb-3">
@@ -140,7 +156,10 @@ export default function Productos() {
           </Row>
 
           <div className="d-flex justify-content-center gap-3">
-            <Button type="submit" variant="danger">
+            <Button
+              type="submit"
+              style={{ backgroundColor: '#4CAF50', borderColor: '#4CAF50' }}
+            >
               {editando ? 'Actualizar' : 'Crear'}
             </Button>
             {editando && (

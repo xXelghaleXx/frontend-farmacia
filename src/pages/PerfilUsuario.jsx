@@ -6,7 +6,7 @@ export default function PerfilUsuario() {
   if (!usuario) {
     return (
       <Container className="mt-5 text-center">
-        <h3>No has iniciado sesión</h3>
+        <h3 style={{ color: '#4CAF50' }}>No has iniciado sesión</h3>
       </Container>
     );
   }
@@ -16,7 +16,10 @@ export default function PerfilUsuario() {
       <Row className="justify-content-center">
         <Col md={6}>
           <Card className="shadow">
-            <Card.Header className="bg-danger text-white fw-bold text-center">
+            <Card.Header
+              className="text-white fw-bold text-center"
+              style={{ backgroundColor: '#4CAF50' }}
+            >
               Perfil de Usuario
             </Card.Header>
             <Card.Body>
